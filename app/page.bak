@@ -1,0 +1,334 @@
+import StickyCta from "./components/StickyCta";
+export default function Home() {
+  const links = {
+    tokyo: "https://link.locatone.sony.net/vRJUZZ14E5",
+    miyazaki: "https://link.locatone.sony.net/J66DS1HTj5",
+    appStore: "https://apps.apple.com/jp/app/locatone/id1524608592",
+    googlePlay: "https://play.google.com/store/apps/details?id=jp.co.sony.soundar.smp",
+    faq: "/miyazaki/QandA",
+    privacy: "/miyazaki/Privacypolicy",
+    sns: {
+      x: "https://x.com/hiina_miyazaki",
+      instagram: "https://www.instagram.com/hiina_miyazaki/",
+      facebook:
+        "https://www.facebook.com/people/%E5%AE%AE%E5%B4%8E%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%9F%E3%82%B9%E3%83%86%E3%83%AA%E3%83%BC%E3%83%84%E3%82%A2%E3%83%BC-%E3%81%B2%E3%83%BC%E3%81%AA%E3%81%A8%E5%B7%A1%E3%82%8B%E7%99%92%E3%82%84%E3%81%97%E3%81%AE%E5%AE%AE%E5%B4%8E%E6%97%85%E5%85%AC%E5%BC%8F/61581380831587/",
+    },
+    partners: {
+      mtokyo: "https://www.mtokyo.jp/",
+      mtokyo_x: "https://x.com/miyazakip_tokyo",
+      mtokyo_ig: "https://www.instagram.com/miyazakip_tokyo/",
+      mtokyo_fb: "https://www.facebook.com/miyazakipref.tokyo/about",
+      konne: "https://www.konne.jp/",
+      solaseed: "https://www.solaseedair.jp/",
+      mikagami: "https://1mikagami.com/home",
+      locatone: "https://www.locatone.sony.net/",
+    },
+  };
+
+  // 小物：よく使う“白い窓”
+  const Card = ({ children }: { children: React.ReactNode }) => (
+    <div className="mx-auto w-full max-w-[640px] rounded-[28px] bg-white/90 p-5 shadow-md border border-black/5">
+      {children}
+    </div>
+  );
+
+  const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+    <div className="text-center">
+      <div className="inline-block rounded-full bg-[#F6D46B] px-6 py-2 font-bold">
+        {children}
+      </div>
+    </div>
+  );
+
+  const StoreButtons = () => (
+    <div className="grid grid-cols-2 gap-3">
+      <a href={links.appStore} target="_blank" rel="noopener noreferrer" className="block">
+        <img src="/images/iOSCTA.webp" alt="App Storeからダウンロード" className="w-full h-auto" />
+      </a>
+      <a href={links.googlePlay} target="_blank" rel="noopener noreferrer" className="block">
+        <img src="/images/Googleボタン.webp" alt="Google Playで手に入れよう" className="w-full h-auto" />
+      </a>
+    </div>
+  );
+
+  const StartButtons = () => (
+    <div className="grid grid-cols-2 gap-3">
+      <a href={links.tokyo} target="_blank" rel="noopener noreferrer" className="block">
+        <img src="/images/東京編を聞く.webp" alt="東京編を聞く！" className="w-full h-auto" />
+      </a>
+      <a href={links.miyazaki} target="_blank" rel="noopener noreferrer" className="block">
+        <img src="/images/宮崎編を聞く.webp" alt="宮崎編を聞く！" className="w-full h-auto" />
+      </a>
+    </div>
+  );
+
+  const ToggleShell = ({ id }: { id: string }) => (
+    <div id={id} className="mt-4 overflow-hidden rounded-[22px] border border-black/10 bg-white/80">
+      <div className="bg-[#F6D46B] py-3 text-center font-bold">▼ もっと見る ▼</div>
+      <div className="p-4 text-sm opacity-70">
+        ※ここは後で「テキストのトグル」に差し替えます（今は枠だけ）。
+      </div>
+    </div>
+  );
+
+  return (
+    <main
+  className="min-h-screen pb-32 md:pb-0"
+  style={{
+    backgroundImage: "url(/images/背景.webp)",
+    backgroundRepeat: "repeat",
+    backgroundSize: "auto",
+  }}
+>
+      {/* ===== HERO ===== */}
+      <header className="w-screen">
+        <img
+          src="/images/ヒーロー画像_1215.webp"
+          alt="音×ARでめぐる 宮崎ミステリーツアー"
+          className="w-screen h-auto"
+        />
+
+        <div className="mx-auto max-w-3xl px-4 pt-4 pb-8 space-y-4">
+          {/* タイトルロゴ系（画像で合わせる） */}
+         <img
+  src="/images/ツアータイトルロゴ.webp"
+  alt="東京〜宮崎 サウンドミステリーツアー"
+  className="mx-auto w-[70%] max-w-[420px] h-auto"
+/>
+
+          <img
+            src="/images/音を使ったスタンプラリーを体験してみよう！.webp"
+            alt="音を使ったスタンプラリーを体験してみよう！"
+            className="mx-auto w-[92%] max-w-[560px] h-auto"
+          />
+          
+          <div className="mx-auto w-full max-w-[640px] rounded-[28px] bg-white/90 p-4 shadow-md border border-black/5">
+            <StartButtons />
+          </div>
+        </div>
+      </header>
+
+      {/* ===== 3つのワクワク体験 ===== */}
+      <section className="mx-auto max-w-3xl px-4 pb-10">
+        <Card>
+          <SectionTitle>3つのワクワク体験</SectionTitle>
+
+          {/* 画像で合わせたい場合はここを画像1枚に差し替えOK */}
+          <div className="mt-4 space-y-5 leading-relaxed">
+            <div>
+              <div className="font-bold">① 音で楽しむ “新感覚スタンプラリー”</div>
+              <div className="opacity-80">
+                景色に合わせてストーリーが始まる、新感覚の音声体験。{/* :contentReference[oaicite:4]{index=4} */}
+              </div>
+            </div>
+            <div>
+              <div className="font-bold">② かわいい“ゆるキャラ” ひーな＆ルーナが宝探しをナビゲート</div>
+              <div className="opacity-80">
+                失われた“大事な宝物”を探す冒険。観光しながらワクワクできる、アプリならではの体験です。{/* :contentReference[oaicite:5]{index=5} */}
+              </div>
+            </div>
+            <div>
+              <div className="font-bold">③ 集めた宝で 豪華景品に応募できる</div>
+              <div className="opacity-80">
+                宮崎牛、マンゴー、うなぎなど最大1万円相当の景品が当たるチャンス！{/* :contentReference[oaicite:6]{index=6} */}
+              </div>
+            </div>
+          </div>
+
+          {/* もし「ワクワク体験_1.webp」等で1枚画像にしたければここに img を置く */}
+        </Card>
+      </section>
+
+      {/* ===== 遊び方 ===== */}
+      <section className="mx-auto max-w-3xl px-4 pb-10">
+        <Card>
+          <SectionTitle>遊び方はたった3ステップ</SectionTitle>
+
+          <div className="mt-4 space-y-3">
+            <div className="text-center font-bold">① アプリをダウンロード</div>
+            <StoreButtons />
+
+            <div className="pt-4 text-center font-bold">② アプリを開いて ツアーをスタート</div>
+            <StartButtons />
+
+            <div className="pt-4 text-center font-bold">
+              ③ スポットに近づくと、ひーなが音声で案内！そのまま宝探しがスタート！{/* :contentReference[oaicite:7]{index=7} */}
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      {/* ===== 東京編 ===== */}
+      <section className="mx-auto max-w-3xl px-4 pb-10">
+        <Card>
+          <SectionTitle>東京＆宮崎の絶景を巡ろう</SectionTitle>
+
+          <div className="mt-4 space-y-6 leading-relaxed">
+            <div className="text-center font-bold">東京編</div>
+
+            <div className="space-y-2">
+              <div className="font-bold">新宿駅南口エリア（新宿みやざき館KONNE前）</div>
+              <div className="opacity-80">
+                新宿駅から徒歩3分。「KONNE」には、宮崎の食や観光情報が盛りだくさん♪{/* :contentReference[oaicite:8]{index=8} */}
+              </div>
+              <img src="/images/東京編1.webp" alt="東京編 新宿駅南口エリア" className="w-full h-auto rounded-2xl" />
+            </div>
+
+            <div className="space-y-2">
+              <div className="font-bold">羽田空港 第2ターミナルエリア</div>
+              <div className="opacity-80">
+                宮崎へ向かう旅の玄関口。絶景フライトで、物語の舞台へひとっとび！{/* :contentReference[oaicite:9]{index=9} */}
+              </div>
+              <img src="/images/東京編2.webp" alt="東京編 羽田空港" className="w-full h-auto rounded-2xl" />
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      {/* ===== 宮崎編 ===== */}
+      <section className="mx-auto max-w-3xl px-4 pb-10">
+        <Card>
+          <SectionTitle>神話のふるさと・宮崎へ</SectionTitle>
+
+          <div className="mt-4 space-y-6 leading-relaxed">
+            <div className="opacity-80">
+              大自然と神話が息づく、癒やしの宮崎編。宝探しと物語がいよいよ本格スタート！{/* :contentReference[oaicite:10]{index=10} */}
+            </div>
+
+            <div className="space-y-2">
+              <div className="font-bold">鵜戸神宮エリア</div>
+              <div className="opacity-80">
+                海に突き出した神秘の洞窟神社。有名な「運玉投げ」を体験しよう！{/* :contentReference[oaicite:11]{index=11} */}
+              </div>
+              <img src="/images/宮崎編1.webp" alt="宮崎編 鵜戸神宮" className="w-full h-auto rounded-2xl" />
+            </div>
+
+            <div className="space-y-2">
+              <div className="font-bold">江田神社エリア</div>
+              <div className="opacity-80">
+                みそぎ・祝詞発祥の地として知られる神社。…「みそぎ池」があります。{/* :contentReference[oaicite:12]{index=12} */}
+              </div>
+              <img src="/images/宮崎編2.webp" alt="宮崎編 江田神社" className="w-full h-auto rounded-2xl" />
+            </div>
+
+            <div className="space-y-2">
+              <div className="font-bold">天岩戸神社（高千穂）エリア</div>
+              <div className="opacity-80">
+                伝統的な神楽と神話の舞台として有名。写真映えスポットが多く、物語との相性も抜群。{/* :contentReference[oaicite:13]{index=13} */}
+              </div>
+              <img src="/images/宮崎編3.webp" alt="宮崎編 天岩戸神社（高千穂）" className="w-full h-auto rounded-2xl" />
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      {/* ===== プレゼント ===== */}
+      <section className="mx-auto max-w-3xl px-4 pb-10">
+        <Card>
+          <SectionTitle>プレゼント</SectionTitle>
+
+          <div className="mt-4 text-center font-bold">
+            お宝を集めて豪華景品に応募しよう！{/* :contentReference[oaicite:14]{index=14} */}
+          </div>
+          <div className="mt-1 text-center opacity-80">宮崎のグルメや名産品が当たる！{/* :contentReference[oaicite:15]{index=15} */}</div>
+
+          {/* ここに「プレゼント画像」や説明画像を追加してOK */}
+          <div className="mt-4">
+            <ToggleShell id="present-more" />
+          </div>
+        </Card>
+      </section>
+
+      {/* ===== 参加ガイド / 注意事項 ===== */}
+      <section className="mx-auto max-w-3xl px-4 pb-10">
+        <Card>
+          <SectionTitle>ツアー参加ガイド</SectionTitle>
+
+          <div className="mt-4 space-y-4 text-sm leading-relaxed">
+            <div>
+              <div className="font-bold">開催期間</div>
+              <div className="opacity-80">令和7年11月1日〜令和8年1月31日{/* :contentReference[oaicite:16]{index=16} */}</div>
+            </div>
+            <div>
+              <div className="font-bold">参加費</div>
+              <div className="opacity-80">参加無料（交通費、移動費等は参加者様負担となります）{/* :contentReference[oaicite:17]{index=17} */}</div>
+            </div>
+            <div>
+              <div className="font-bold">実施エリア</div>
+              <div className="opacity-80">
+                東京編：新宿駅南口、羽田空港第2ターミナル ／ 宮崎編：鵜戸神宮、江田神社、天岩戸神社{/* :contentReference[oaicite:18]{index=18} */}
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <div className="font-bold">注意事項</div>
+              <div className="opacity-80">
+                ※注意事項の箇条書きは、あなたの全文テキストの通りで後でそのまま貼れます。{/* :contentReference[oaicite:19]{index=19} */}
+              </div>
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      {/* ===== SNS / FAQ / Privacy ===== */}
+      <section className="mx-auto max-w-3xl px-4 pb-10">
+        <Card>
+          <SectionTitle>イベント公式SNS</SectionTitle>
+
+          <div className="mt-4 grid grid-cols-3 gap-3">
+            <a href={links.sns.x} target="_blank" rel="noopener noreferrer" className="block">
+              <img src="/images/Xロゴ.webp" alt="X" className="w-full h-auto" />
+            </a>
+            <a href={links.sns.instagram} target="_blank" rel="noopener noreferrer" className="block">
+              <img src="/images/インスタロゴ.webp" alt="Instagram" className="w-full h-auto" />
+            </a>
+            <a href={links.sns.facebook} target="_blank" rel="noopener noreferrer" className="block">
+              <img src="/images/フェイスブックロゴ.webp" alt="Facebook" className="w-full h-auto" />
+            </a>
+          </div>
+
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <a href={links.faq} className="block">
+              <div className="rounded-2xl bg-white p-4 shadow-sm border border-black/5 text-center font-bold">
+                よくある質問
+              </div>
+            </a>
+            <a href={links.privacy} className="block">
+              <div className="rounded-2xl bg-white p-4 shadow-sm border border-black/5 text-center font-bold">
+                プライバシーポリシー
+              </div>
+            </a>
+          </div>
+        </Card>
+      </section>
+
+      {/* ===== 主催・協力・制作 ===== */}
+      <section className="mx-auto max-w-3xl px-4 pb-16">
+        <Card>
+          <SectionTitle>主催・協力・制作</SectionTitle>
+
+          {/* ひとまずロゴだけ並べる（詳細はトグルをテキスト化する時に差し込む） */}
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <img src="/images/ロゴ_KONNNE.webp" alt="KONNE" className="w-full h-auto" />
+            <img src="/images/ロゴ_ソラシド.webp" alt="ソラシドエア" className="w-full h-auto" />
+            <img src="/images/ロゴ_locatone.webp" alt="Locatone" className="w-full h-auto col-span-2" />
+            <img src="/images/ロゴ_ミカガミ.webp" alt="ミカガミ" className="w-full h-auto col-span-2" />
+          </div>
+
+          <div className="mt-4">
+            <ToggleShell id="about-more" />
+          </div>
+
+          {/* 参考：Locatone公式サイトURL等はあなたの全文にあり（後でテキスト実装に反映） */}
+          <div className="mt-4 text-xs opacity-70">
+            Locatone公式：{links.partners.locatone} {/* :contentReference[oaicite:20]{index=20} */}
+          </div>
+        </Card>
+      </section>
+            <StickyCta
+        appStoreUrl="https://apps.apple.com/jp/app/locatone/id1524608592"
+        googlePlayUrl="https://play.google.com/store/apps/details?id=jp.co.sony.soundar.smp"
+      />
+    </main>
+  );
+}

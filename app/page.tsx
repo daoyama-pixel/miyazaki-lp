@@ -104,12 +104,14 @@ export default function Home() {
           <picture>
             <source media="(min-width: 768px)" srcSet="/images/hero-pc.webp" />
             <img
-              src="/images/hero.webp"
-              alt="音×ARでめぐる 宮崎ミステリーツアー"
-              className="h-full w-full object-cover md:object-contain"
-              fetchPriority="high"
-              decoding="async"
-            />
+  src="/images/hero.webp"
+  alt="音×ARでめぐる 宮崎ミステリーツアー"
+  className="h-full w-full object-cover md:object-contain"
+  loading="eager"
+  fetchPriority="high"
+  decoding="async"
+/>
+
           </picture>
         </div>
 

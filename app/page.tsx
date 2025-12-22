@@ -102,17 +102,36 @@ export default function Home() {
         {/* 画像の枠（先に高さ確保してCLS防止） */}
         <div className="w-full aspect-[16/9] max-h-[60vh] md:max-h-[420px] overflow-hidden bg-[#F7F1DF]/90">
           <picture>
-            <source media="(min-width: 768px)" srcSet="/images/hero-pc.webp" />
-            <img
-  src="/images/hero.webp"
-  alt="音×ARでめぐる 宮崎ミステリーツアー"
-  className="h-full w-full object-cover md:object-contain"
-  loading="eager"
-  fetchPriority="high"
-  decoding="async"
-/>
+  {/* PC */}
+  <source
+    media="(min-width: 768px)"
+    srcSet="
+      /images/hero-pc-960.webp 960w,
+      /images/hero-pc-1280.webp 1280w
+    "
+    sizes="640px"
+  />
 
-          </picture>
+  {/* SP */}
+  <source
+    media="(max-width: 767px)"
+    srcSet="
+      /images/hero-sp-480.webp 480w,
+      /images/hero-sp-720.webp 720w,
+      /images/hero-sp-960.webp 960w
+    "
+    sizes="100vw"
+  />
+
+  <img
+    src="/images/hero-sp-720.webp"
+    alt="音×ARでめぐる 宮崎ミステリーツアー"
+    className="h-full w-full object-cover md:object-contain"
+    loading="eager"
+    fetchPriority="high"
+    decoding="async"
+  />
+</picture>
         </div>
 
 

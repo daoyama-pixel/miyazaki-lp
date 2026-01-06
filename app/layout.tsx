@@ -23,25 +23,24 @@ export const metadata: Metadata = {
       "スマホひとつで物語が始まる。音とARで巡る、新しい宮崎観光体験。",
     url: "https://www.miyazaki-mystery.com/",
     siteName: "宮崎サウンドミステリーツアー",
-    images: [
-  {
-    url: "/hero-sp-960.webp",
-    width: 960,
-    height: 533, // 実サイズに合わせて
-    alt: "宮崎サウンドミステリーツアー",
-  },
-],
-    locale: "ja_JP",
-    type: "website",
-  },
-  twitter: {
+     images: [
+    {
+      url: "/images/hero-sp-960.webp",
+      width: 960,
+      height: 533,
+      alt: "宮崎サウンドミステリーツアー",
+    },
+  ],
+  locale: "ja_JP",
+  type: "website",
+},
+ twitter: {
   card: "summary_large_image",
   title: "宮崎サウンドミステリーツアー｜音×ARで巡る体験型観光",
   description:
     "スマホひとつで物語が始まる。音とARで巡る、新しい宮崎観光体験。",
-  images: ["/hero-sp-960.webp"],
+  images: ["/images/hero-sp-960.webp"],
 },
-
 };
 
 export default function RootLayout({
@@ -65,6 +64,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* ===== End Google Tag Manager ===== */}
+
+  {/* ===== Microsoft Clarity ===== */}
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments);};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "ux2zqymm48");
+`,
+  }}
+/>
+
+        {/* ===== End Microsoft Clarity ===== */}
+
+
       </head>
 
       <body
